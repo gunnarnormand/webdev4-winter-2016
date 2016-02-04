@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'trap';
+  src: url(../assets/fonts/thetrainingartist.ttf)  format('truetype'); 
+}
+
+@font-face {
+  font-family: 'devil-medium';
+  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Medium.ttf)  format('truetype'); 
+}
+
+@font-face {
+  font-family: 'devil-bold';
+  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Bold.ttf)  format('truetype'); 
+}
+
+@font-face {
+  font-family: 'devil-medium';
+  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Medium.ttf)  format('truetype'); 
+}
+
+@font-face {
+  font-family: 'devil-light';
+  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Light.ttf)  format('truetype'); 
+}
+
+@font-face {
+  font-family: 'aaargh';
+  src: url(../assets/fonts/Aaargh/Aaargh.ttf)  format('truetype'); 
+}
+
+
+// COLORS
+
+
+$purpleGradient: linear-gradient(45deg,  rgba(181,37,188,0.8) 0%,rgba(125,185,232,0.8) 100%); 
+
+$yellowGradient: linear-gradient(45deg,  rgba(237,228,66,0.8) 0%,rgba(181,37,188,0.8) 100%); 
+
+$greenGradient: linear-gradient(45deg, rgba(49,247,56,0.8) 0%,rgba(237,228,66,0.8) 100%); 
+
+$blueGradient: linear-gradient(45deg, rgba(52,175,188,0.8) 0%,rgba(49,247,56,0.8) 100%); 
+
+$pinkGradient: linear-gradient(45deg, rgba(249,49,196,0.8) 0%,rgba(52,175,188,0.8) 100%);
+
+$purpleGradient2: linear-gradient(45deg, rgba(181,37,188,0.8) 0%,rgba(249,49,196,0.8) 99%);
+
+$whiteLowOpacity: rgba(255, 255, 255, 0.4);

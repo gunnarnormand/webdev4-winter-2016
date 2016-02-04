@@ -1,0 +1,72 @@
+.burg {
+	width: 60px;
+	height: 60px;
+	// border:1px solid red;
+	position: fixed;
+	top: 0;
+	left: 1em;
+	padding: 1em;
+	z-index: 200;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	.bar {
+		width: 60px;
+		height: 10px;
+		border: 1px solid #fff;
+		position: absolute;
+	}
+
+	.top {
+		left:0;
+		top:20%;
+		transition:all 0.5s;
+		width: 60px;
+
+		&.clicked {
+			transform:rotate(45deg);
+			top:40%;
+			border-radius: 0px;
+			background-color: #fff;
+		}
+	}
+
+	.middle {
+		left:0;
+		top:40%;
+		transition:all 0.5s;
+		width: 60px;
+
+		&.clicked {
+			display: none;	
+		}
+	}
+
+	.bottom {
+		left:0;
+		top:60%;
+		transition:all 0.5s;
+
+		&.clicked {
+			transform: rotate(-45deg);
+			top:40%;
+			background-color: #fff;
+		}
+	}
+}
+
+.burg:hover .middle {
+	width: 30px;
+}
+
+.burg:hover .top {
+	width: 30px;
+    transform: translateX(30px);
+}
+
+.burg:hover .bottom{
+	width: 30px;
+    transform: translateX(30px);
+}
