@@ -1,6 +1,7 @@
 @import "partials/variables";
 @import "partials/clearfix";
 @import "partials/hamburger";
+@import "partials/btns";
 
 
 // TYPOGRAPHY
@@ -16,25 +17,19 @@ html, body {
   	padding: 0;
   	box-sizing: border-box;
   	background-color: transparent;
-  	background-image: url(https://unsplash.it/2000/?random);
-	background-repeat: no-repeat;
-	background-position: 0% 0%;
-	background-attachment: fixed;
-	background-size: auto;
-
 }
 
 h1, h2, h3, h4, h5, h6 { 
-  text-align: center; 
-  line-height: 1.5em; 
-  margin: 0; 
-  padding: 0;
+  	text-align: center; 
+  	line-height: 1.5em; 
+  	margin: 0; 
+  	padding: 0;
 }
 
 h1 {
-  font-size: 2.55em; /* 40px */
-  line-height: 1.2em;
-  font-family: 'trap';
+	font-size: 2.55em; /* 40px */
+	line-height: 1.2em;
+	font-family: 'trap';
 }   
 
 h2 {
@@ -90,15 +85,21 @@ ul {
 
 	nav {
 		height: 100vh;
-		width: 100vw;
-		background: rgba(0,0,0,0.8);
+		width: 50vw;
+		background: rgba(0,0,0,0.9);
 		transform: translateY(-100%);
 		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 100;
+		opacity: 0;
+		transition-property: transform, opacity;
+		transition-duration: 0.4s, 0.6s;
+		transition-timing-function: cubic-bezier(0,.38,.83,.67), ease-out;
+		transition-delay: 4ms;
 
 		&.overlay {
+			opacity: 1;
 			transform: translateY(0);
 		}
 
@@ -107,121 +108,265 @@ ul {
 			position: relative;
 			top: 50%;
 			transform: translateY(-50%);
+			z-index: 50;
 
 			li {
-				text-align: center;
-				margin: 15px;
+				text-align: justify;
+				margin: 15px 15px 15px 0px;
+
+				&:hover {
+					background: transparent;
+
+					a {
+						color: $purple;
+					}
+				}
 
 				a {
 					padding: 15px;
 					color: #fff;
 					font-family: 'devil-light';
 					font-size: 2.55em;
+					transition-property: color;
+					transition-duration: 0.4s;
+					transition-timing-function: ease;
+					transition-delay: 4ms;
 				}
 			}
 		}
 	}
 
 	header {
+		height: 80px;
+		width: auto;
+		background: $purpleGradient;
+		background-repeat: no-repeat;
+		background-position: 0% 0%;
+		background-attachment: fixed;
+		background-size: auto;
+	}
+
+	section {
+		height: 100vh;
+		overflow: hidden;
+
+		article {
+			height: 25vh;
+			background: $whiteLowOpacity;
+
+			h1 {
+				padding-top: 0.25em;
+			}
+		}
+
+		article:nth-of-type(2) {
+			height: 25vh;
+
+			h2 {
+				padding: 0;
+				color: #fff;
+			}
+		}
+		
+
+		video { 
+			position: relative;
+    		top: 50%;
+    		left: 50%;
+    		transform: translateX(-50%) translateY(-21.888888%);
+    		min-height: 150vh;
+    		min-width: 100%;
+    		max-height: 150vh;
+    		width: auto;
+    		height: auto;
+    		z-index: -1;
+    		background-image: url(../pineapple.jpeg);
+    		background-repeat: no-repeat;
+    		background-position: center center;
+    		background-attachment: fixed;
+    		background-size: 200%;
+		}
+	}
+
+	#header {
 		height: 80vh;
 		background: $purpleGradient;
 		color: #fff;
 		text-align: center;
 
 		h1 {
+			font-size: 4.55em;
 			padding-top: 5%;
 		}
 
 		h2 {
-			font-size: 2.55em;
+			font-size: 4.55em;
+		}
+
+		h3 {
+			font-size: 3.75em;
 		}
 
 		p {
+			font-size: 2em;
 			text-transform: uppercase;
-		}
-	}
-
-	section {
-		height: 100vh;
-
-		article {
-			height: 20vh;
-			background: $whiteLowOpacity;
 		}
 	}
 
 	#treats {
 		background: $yellowGradient;
 
-		video { 
-			position: relative;
-		    top: 50%;
-		    left: 50%;
-		    transform: translateX(-50%) translateY(-50%);
-		    min-height: 80%;
-		    width: auto;
-		    height: auto;
-		    z-index: -1;
-		    background: url(https://unsplash.it/2000/?random) no-repeat;
-		    background-size: 100%;
-		}
-
 	}
 
 	#meals {
 		background: $greenGradient;
-
-		video { 
-			position: relative;
-		    top: 50%;
-		    left: 50%;
-		    transform: translateX(-50%) translateY(-50%);
-		    min-height: 100%;
-		    width: auto;
-		    height: auto;
-		    z-index: -1;
-		    background: url(https://unsplash.it/2000/?random) no-repeat;
-		    background-size: 100%;
-		}
 	}
 
 	#collabs {
 		background: $blueGradient;
-
-		video { 
-			position: relative;
-		    top: 50%;
-		    left: 50%;
-		    transform: translateX(-50%) translateY(-50%);
-		    min-height: 100%;
-		    width: auto;
-		    height: auto;
-		    z-index: -1;
-		    background: url(https://unsplash.it/2000/?random) no-repeat;
-		    background-size: 100%;
-		}
 	}
 
 	#dozer {
 		background: $purpleGradient2;
+	}
 
-		video { 
-			position: relative;
-		    top: 50%;
-		    left: 50%;
-		    transform: translateX(-50%) translateY(-50%);
-		    min-height: 100%;
-		    width: auto;
-		    height: auto;
-		    z-index: -1;
-		    background: url(https://unsplash.it/2000/?random) no-repeat;
-		    background-size: 100%;
+	.expands {
+		background: $whiteLowOpacity;
+		opacity: 0;
+		height: 0vh;
+		overflow: hidden;
+		transition-property: all;
+		transition-duration: 0.4s;
+		transition-timing-function: ease;
+		transition-delay: none;
+
+		p {
+			color: #fff;
+			padding: 0;
+			transition-property: all;
+			transition-duration: 1.0s;
+			transition-timing-function: ease;
+			transition-delay: none;
 		}
 	}
 
+	.open {
+		height: 50vh;
+		opacity: 1;
 
-}	
+		p {
+			color: #000;
+			padding: 1em 1em;
+			line-height: 1.1em;
+			background: $whiteLowOpacity;
+		}
+	}
+}
 
+@media screen and (min-width: $iPhone6Plus) {
+	section {
 
+		article {
 
+			h1 {
+				padding-top: 0.8em;
+			}
+		}
+	}
+}
 
+@media screen and (min-width: $iPad) {
+
+	nav {
+		width: 25vw;
+	}
+
+	#header {
+
+		h1 {
+			font-size: 5.55em;
+		}
+
+		h2 {
+			font-size: 5.55em;
+		}
+
+		h3 {
+			font-size: 4.75em;
+		}
+
+		p {
+			font-size: 3em;
+		}
+	}
+
+	section {
+
+		article {
+
+			h1 {
+				padding-top: 1.25em;
+			}
+		}
+	}
+
+	.open {
+
+		p {
+			padding: 1em 5em;
+			line-height: 1.3em;
+			background: none;
+		}
+	}
+}
+
+@media screen and (min-width: $laptop) {
+
+	nav {
+		width: 15vw;
+		height: 50vh;
+    	border-radius: 0 0 0.5em 0;
+
+    	ul {
+			
+			li {
+				margin: 25px 15px 25px 0px;
+			}
+		}
+	}
+
+	section {
+
+		article {
+
+			h1 {
+				padding-top: 1.75em;
+			}
+		}
+	}
+
+	.open {
+
+		p {
+			padding: 1em 5em;
+			line-height: 2em;
+			background: none;
+		}
+	}
+}
+
+@media screen and (min-width: $laptopHiDPI) {
+
+	nav {
+		width: 12vw;
+		height: 50vh;
+    	border-radius: 0 0 0.5em 0;
+
+    	ul {
+			
+			li {
+				margin: 30px 15px 30px 0px;
+			}
+		}
+	}
+}

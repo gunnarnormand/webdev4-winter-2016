@@ -1,0 +1,51 @@
+%btn--base {
+	border: 1px solid #fff;
+	border-radius: 0.5em;
+	background: none;
+	outline: none;
+	margin: 20px 0;
+	padding: 0.7em 1em 0.5em 1.2em;
+	cursor: pointer;
+	background: $whiteLowOpacity;
+	position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    transition-property: transform;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 4ms;
+
+	&:hover {
+		transform: translateX(-50%) scale(1.1);
+	}
+}
+
+.btn-big {
+	@extend %btn--base;
+	font-family: 'devil-light';
+	font-size: 1em;
+}
+
+.btn-small {
+	@extend %btn--base;
+	font-family: 'aaargh';
+	font-size: 1em;
+	color: #fff;
+	background: $blackLowOpacity;
+	border: 1px solid #000;
+}
+
+
+
+@media screen and (min-width: $iPad) {
+	.btn-big {
+		font-size: 2em;
+		margin: 80px 0;
+	}
+
+	.btn-small {
+		font-size: 1em;
+		margin: 80px 0;
+	}
+}

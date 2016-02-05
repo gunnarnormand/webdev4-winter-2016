@@ -1,26 +1,26 @@
 @font-face {
   font-family: 'trap';
-  src: url(../assets/fonts/thetrainingartist.ttf) format("truetype"); }
+  src: url(../fonts/assets/thetrainingartist.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'devil-medium';
-  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Medium.ttf) format("truetype"); }
+  src: url(../fonts/assets/devil_breeze/Devil-Breeze-Medium.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'devil-bold';
-  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Bold.ttf) format("truetype"); }
+  src: url(../fonts/assets/devil_breeze/Devil-Breeze-Bold.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'devil-medium';
-  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Medium.ttf) format("truetype"); }
+  src: url(../fonts/assets/devil_breeze/Devil-Breeze-Medium.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'devil-light';
-  src: url(../assets/fonts/devil_breeze/Devil-Breeze-Light.ttf) format("truetype"); }
+  src: url(../fonts/assets/devil_breeze/Devil-Breeze-Light.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'aaargh';
-  src: url(../assets/fonts/Aaargh/Aaargh.ttf) format("truetype"); }
+  src: url(../fonts/assets/Aaargh/Aaargh.ttf) format("truetype"); }
 
 /*CLEARFIX===================================================*/
 .clearfix:before,
@@ -41,7 +41,11 @@
   top: 0;
   left: 1em;
   padding: 1em;
-  z-index: 200; }
+  z-index: 100;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 6ms; }
   .burg:hover {
     cursor: pointer; }
   .burg .bar {
@@ -52,8 +56,11 @@
   .burg .top {
     left: 0;
     top: 20%;
-    transition: all 0.5s;
-    width: 60px; }
+    width: 60px;
+    transition-property: transform, background-color;
+    transition-duration: 0.4s, 0.6s;
+    transition-timing-function: ease;
+    transition-delay: 4ms; }
     .burg .top.clicked {
       transform: rotate(45deg);
       top: 40%;
@@ -62,14 +69,20 @@
   .burg .middle {
     left: 0;
     top: 40%;
-    transition: all 0.5s;
-    width: 60px; }
+    width: 60px;
+    transition-property: transform, background-color;
+    transition-duration: 0.4s, 0.6s;
+    transition-timing-function: ease;
+    transition-delay: 4ms; }
     .burg .middle.clicked {
       display: none; }
   .burg .bottom {
     left: 0;
     top: 60%;
-    transition: all 0.5s; }
+    transition-property: transform, background-color;
+    transition-duration: 0.4s, 0.6s;
+    transition-timing-function: ease;
+    transition-delay: 4ms; }
     .burg .bottom.clicked {
       transform: rotate(-45deg);
       top: 40%;
@@ -86,6 +99,45 @@
   width: 30px;
   transform: translateX(30px); }
 
+.btn-big, .btn-small {
+  border: 1px solid #fff;
+  border-radius: 0.5em;
+  background: none;
+  outline: none;
+  margin: 20px 0;
+  padding: 0.7em 1em 0.5em 1.2em;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 4ms; }
+  .btn-big:hover, .btn-small:hover {
+    transform: translateX(-50%) scale(1.1); }
+
+.btn-big {
+  font-family: 'devil-light';
+  font-size: 1em; }
+
+.btn-small {
+  font-family: 'aaargh';
+  font-size: 1em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #000; }
+
+@media screen and (min-width: 768px) {
+  .btn-big {
+    font-size: 2em;
+    margin: 80px 0; }
+  .btn-small {
+    font-size: 1em;
+    margin: 80px 0; } }
+
 html, body {
   width: 100vw;
   overflow-x: hidden;
@@ -96,12 +148,7 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: transparent;
-  background-image: url(https://unsplash.it/2000/?random);
-  background-repeat: no-repeat;
-  background-position: 0% 0%;
-  background-attachment: fixed;
-  background-size: auto; }
+  background-color: transparent; }
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
@@ -161,93 +208,168 @@ ul {
 @media screen and (min-width: 0px) {
   nav {
     height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.8);
+    width: 50vw;
+    background: rgba(0, 0, 0, 0.9);
     transform: translateY(-100%);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100; }
+    z-index: 100;
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.4s, 0.6s;
+    transition-timing-function: cubic-bezier(0, 0.38, 0.83, 0.67), ease-out;
+    transition-delay: 4ms; }
     nav.overlay {
+      opacity: 1;
       transform: translateY(0); }
     nav ul {
       padding: 0;
       position: relative;
       top: 50%;
-      transform: translateY(-50%); }
+      transform: translateY(-50%);
+      z-index: 50; }
       nav ul li {
-        text-align: center;
-        margin: 15px; }
+        text-align: justify;
+        margin: 15px 15px 15px 0px; }
+        nav ul li:hover {
+          background: transparent; }
+          nav ul li:hover a {
+            color: #b525bc; }
         nav ul li a {
           padding: 15px;
           color: #fff;
           font-family: 'devil-light';
-          font-size: 2.55em; }
+          font-size: 2.55em;
+          transition-property: color;
+          transition-duration: 0.4s;
+          transition-timing-function: ease;
+          transition-delay: 4ms; }
   header {
+    height: 80px;
+    width: auto;
+    background: linear-gradient(45deg, rgba(181, 37, 188, 0.8) 0%, rgba(125, 185, 232, 0.8) 100%);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-attachment: fixed;
+    background-size: auto; }
+  section {
+    height: 100vh;
+    overflow: hidden; }
+    section article {
+      height: 25vh;
+      background: rgba(255, 255, 255, 0.4); }
+      section article h1 {
+        padding-top: 0.25em; }
+    section article:nth-of-type(2) {
+      height: 25vh; }
+      section article:nth-of-type(2) h2 {
+        padding: 0;
+        color: #fff; }
+    section video {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-21.88889%);
+      min-height: 150vh;
+      min-width: 100%;
+      max-height: 150vh;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      background-image: url(../pineapple.jpeg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: 200%; }
+  #header {
     height: 80vh;
     background: linear-gradient(45deg, rgba(181, 37, 188, 0.8) 0%, rgba(125, 185, 232, 0.8) 100%);
     color: #fff;
     text-align: center; }
-    header h1 {
+    #header h1 {
+      font-size: 4.55em;
       padding-top: 5%; }
-    header h2 {
-      font-size: 2.55em; }
-    header p {
+    #header h2 {
+      font-size: 4.55em; }
+    #header h3 {
+      font-size: 3.75em; }
+    #header p {
+      font-size: 2em;
       text-transform: uppercase; }
-  section {
-    height: 100vh; }
-    section article {
-      height: 20vh;
-      background: rgba(255, 255, 255, 0.4); }
   #treats {
     background: linear-gradient(45deg, rgba(237, 228, 66, 0.8) 0%, rgba(181, 37, 188, 0.8) 100%); }
-    #treats video {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      min-height: 80%;
-      width: auto;
-      height: auto;
-      z-index: -1;
-      background: url(https://unsplash.it/2000/?random) no-repeat;
-      background-size: 100%; }
   #meals {
     background: linear-gradient(45deg, rgba(49, 247, 56, 0.8) 0%, rgba(237, 228, 66, 0.8) 100%); }
-    #meals video {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1;
-      background: url(https://unsplash.it/2000/?random) no-repeat;
-      background-size: 100%; }
   #collabs {
     background: linear-gradient(45deg, rgba(52, 175, 188, 0.8) 0%, rgba(49, 247, 56, 0.8) 100%); }
-    #collabs video {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1;
-      background: url(https://unsplash.it/2000/?random) no-repeat;
-      background-size: 100%; }
   #dozer {
     background: linear-gradient(45deg, rgba(181, 37, 188, 0.8) 0%, rgba(249, 49, 196, 0.8) 99%); }
-    #dozer video {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1;
-      background: url(https://unsplash.it/2000/?random) no-repeat;
-      background-size: 100%; } }
+  .expands {
+    background: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    height: 0vh;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-delay: none; }
+    .expands p {
+      color: #fff;
+      padding: 0;
+      transition-property: all;
+      transition-duration: 1.0s;
+      transition-timing-function: ease;
+      transition-delay: none; }
+  .open {
+    height: 50vh;
+    opacity: 1; }
+    .open p {
+      color: #000;
+      padding: 1em 1em;
+      line-height: 1.1em;
+      background: rgba(255, 255, 255, 0.4); } }
+
+@media screen and (min-width: 414px) {
+  section article h1 {
+    padding-top: 0.8em; } }
+
+@media screen and (min-width: 768px) {
+  nav {
+    width: 25vw; }
+  #header h1 {
+    font-size: 5.55em; }
+  #header h2 {
+    font-size: 5.55em; }
+  #header h3 {
+    font-size: 4.75em; }
+  #header p {
+    font-size: 3em; }
+  section article h1 {
+    padding-top: 1.25em; }
+  .open p {
+    padding: 1em 5em;
+    line-height: 1.3em;
+    background: none; } }
+
+@media screen and (min-width: 1280px) {
+  nav {
+    width: 15vw;
+    height: 50vh;
+    border-radius: 0 0 0.5em 0; }
+    nav ul li {
+      margin: 25px 15px 25px 0px; }
+  section article h1 {
+    padding-top: 1.75em; }
+  .open p {
+    padding: 1em 5em;
+    line-height: 2em;
+    background: none; } }
+
+@media screen and (min-width: 1440px) {
+  nav {
+    width: 12vw;
+    height: 50vh;
+    border-radius: 0 0 0.5em 0; }
+    nav ul li {
+      margin: 30px 15px 30px 0px; } }
