@@ -1,0 +1,17 @@
+button {
+  border: 1px solid springgreen;
+  background: transparent;
+  background: none;
+  outline: none;
+  margin: 20px 0;
+  padding: 1em;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 4ms;
+  
+  &:hover {
+    transform: scale(1.1); 
+  }
+}
