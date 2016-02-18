@@ -1,4 +1,141 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'partials/variables';
 
+body {
+	text-transform: uppercase;
+}
 
+nav {
+    background: rgba(0, 0, 0,0.6);
+    ul{
+    	li{
+    		a {
+    			color: $orange;
+    		}
+    	}
+    }
+}
+
+.navbar {
+	padding: 0;
+
+	.navbar-brand {
+		color: orange;
+		padding: 0.25em 2em 0 2em;
+	}
+
+	.form-inline {
+		padding: 0.25rem 1em 0 0;
+	}
+
+	.form-control {
+		padding: 0;
+	}
+
+	.btn {
+		padding: 0 0.25em;
+		color: $orange;
+		border: 1px solid transparent;
+
+		&:hover {
+			background: transparent;
+			border: 1px solid $orange;
+		}
+	}
+}
+
+.jumbotron {
+    height: 100vh;
+	background-image: url('../assets/img/shack.jpg');
+	background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-attachment: scroll;
+    background-size: 200%;
+    margin: 0;
+}
+
+.page-header {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: hsla(0, 0%, 100%, 0.8);
+	padding: 1em;
+	border-radius: 5px;
+    height: auto;
+    width: auto;
+
+    h1 {
+    	color: #000;
+    }
+
+}
+
+.row {
+	padding-top: 1em;
+}
+
+.content-bg {
+	height: auto;
+    width: 100vw;
+	background-image: url('../assets/img/fatmatts.jpg');
+	background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.nav-secondary {
+	background: rgba(255, 255, 255, 0.8); 
+}
+
+.tab-content {
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 5px 5px 0px 0px;
+	width: 75%;
+	margin: 1em 12.5% auto;
+}
+
+.tab-pane {
+	padding: 1em 6em 16em 6em;
+
+	h2 {
+		text-align: center;
+		margin: 1em 1em 2em 1em;
+	}
+}
+
+iframe {
+	width: 100%;
+}
+
+.subscribe {
+	color: $orange;
+	background: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	margin: 5em;
+	border-radius: 5px;
+
+	h3 {
+		padding: 1em 0;
+	}
+
+	form {
+		width: 50%;
+		transform: translateX(50%);
+		padding: 1em;
+
+	}
+
+	.btn {
+		background: $orange;
+		border: none;
+	}
+}
+
+footer {
+	color: white;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.8);
+	padding-top: 1em;
+}
