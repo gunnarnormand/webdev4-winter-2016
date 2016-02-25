@@ -1,0 +1,185 @@
+@import 'node_modules/materialize-css/sass/materialize';
+@import 'node_modules/materialize-css/sass/components/icons-material-design';
+
+body {
+  background: color("grey", "lighten-3");	
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.slider {
+	background: color("deep-orange", "lighten-3");
+}
+
+.container p {
+  color: #fff;
+} 
+
+.collapsible-body p {
+  color: color("orange", "lighten-3");
+}
+
+.modal.bottom-sheet {
+	max-height: 80%;
+}
+
+.section {
+	padding-bottom: 5em;
+}
+
+section {
+  border-bottom: 1em solid $primary-color;
+  margin-bottom: 0;
+}
+
+iframe {
+	width: 100%;
+}
+
+#hours {
+  height: auto;
+  background-image: url('../assets/img/night.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#plan {
+	padding-bottom: 5em;
+}
+
+#campgrounds {
+  height: auto;
+  background-image: url('../assets/img/night.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#location {
+  height: auto;
+  background-image: url('../assets/img/night.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#features {
+  height: auto;
+  background-image: url('../assets/img/night.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.activator {
+  -webkit-filter: saturate(200%) contrast(175%);
+  transition-property: -webkit-filter;
+  transition-duration: 0.3s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease;
+
+  &:hover {
+  	-webkit-filter: saturate(300%) contrast(200%);
+  }
+}
+
+footer {
+	overflow: hidden;
+}
+
+.social {
+  width: 50px;
+  height: 50px;
+  text-indent: -999999px;
+  display: block;	
+  border-radius: 0%;
+  float: left;
+  transition-property: background-color, border-radius;
+  transition-duration: 0.2s, 0.4s;
+  transition-delay: 0s, 0.1s;
+  transition-timing-function: ease-in-out, ease;
+
+    &:hover {
+    	background-color: #222;
+    	border-radius: 10%;
+    }
+}
+
+.social-nav {
+	float: none;
+
+	&:hover {
+		background-color: inherit;
+	}
+}
+
+.facebook {
+  background: url(../assets/img/social-icons/facebook-square-white.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.google {
+  background: url(../assets/img/social-icons/googleplus-square-white.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.instagram {
+  background: url(../assets/img/social-icons/instagram-white.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.twitter {
+  background: url(../assets/img/social-icons/twitter-white.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.facebook-nav {
+  background: url(../assets/img/social-icons/facebook-square.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.google-nav {
+  background: url(../assets/img/social-icons/googleplus-square.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.instagram-nav {
+  background: url(../assets/img/social-icons/instagram.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+.twitter-nav {
+  background: url(../assets/img/social-icons/twitter.svg) no-repeat center transparent;
+  background-size: 150%;
+}
+
+
+@media #{$small-and-down} {
+
+	h1 {
+	  font-size: 3em;
+	}
+}
+
+@media #{$medium-and-up} {
+	.social {
+      width: 75px;
+      height: 75px;
+      margin: 0 0.25em; 
+	}
+}
+  
+@media #{$large-and-up} {
+
+	.social {
+      width: 100px;
+      height: 100px;
+	}
+}
