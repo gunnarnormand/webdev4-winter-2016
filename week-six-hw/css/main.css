@@ -11012,6 +11012,9 @@ body {
 nav {
   background: rgba(0, 0, 0, 0.4); }
 
+.side-nav a {
+  text-transform: uppercase; }
+
 .slider {
   background: #ffab91; }
 
