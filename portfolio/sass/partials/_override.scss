@@ -1,0 +1,29 @@
+.modal {
+	background-color: hsla(0, 0%, 100%, 0.8);    
+	max-height: 100%;
+	width: 100%;
+}
+
+.modal-content {
+	background: hsla(0, 0%, 100%, 0.5);
+}
+
+
+.btn-large {
+	background: transparent;
+
+	&:hover {
+		background: hsla(0, 0%, 100%, 0.5);
+		color: #222;
+	}
+
+	&::active {
+		background: hsla(0, 0%, 100%, 0.5);
+	}
+}
+
+.btn {
+	@extend .btn-large;
+
+	color: #444;
+}

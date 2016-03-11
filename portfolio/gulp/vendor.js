@@ -6,9 +6,8 @@ module.exports = function(options) {
     
     var vendorFiles = [
         'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/skeleton-sass/skeleton',
-        // 'node_modules/jquery.scrollto/jquery.scrollTo.min.js',
-        // 'node_modules/materialize-css/dist/js/materialize.min.js'
+        'node_modules/materialize-css/dist/js/materialize.min.js',
+        'node_modules/jquery.scrollto/jquery.scrollTo.min.js'
     ];
     
     // Copy dependencies to build/node_modules/ 

@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "jquery": "^2.2.1",
-    "skeleton-sass": "0.0.1"
+    "jquery.scrollto": "^2.1.2",
+    "materialize-css": "^0.97.5"
   }
 }

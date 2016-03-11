@@ -1,0 +1,53 @@
+
+#cover {
+    background: #000;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100000;
+
+    .loader{
+		text-align: center;
+		text-transform: uppercase;
+		color: transparent;
+		letter-spacing: 0.01em;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	
+
+		span{
+	  		text-shadow: 0 0 0 rgb(255, 255, 255);
+	  		-webkit-animation: loading 0.85s ease-in-out infinite alternate;
+		}
+
+		span:nth-child(2){
+	  		-webkit-animation-delay:0.15s;
+		}
+
+		span:nth-child(3){
+		 	-webkit-animation-delay:0.30s;
+		}
+
+		span:nth-child(4){
+		 	-webkit-animation-delay:0.45s;
+		}
+
+		span:nth-child(5){
+		  	-webkit-animation-delay:0.60s;
+		}
+
+		span:nth-child(6){
+		  	-webkit-animation-delay:0.75s;
+		}
+
+		span:nth-child(7){
+		  	-webkit-animation-delay:0.90s;
+		}
+	}	
+
+	@-webkit-keyframes loading {
+	  to {text-shadow: 30px 0 100px rgb(255, 0, 255);}
+	}	
+}
